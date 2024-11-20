@@ -11,11 +11,20 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldownTime; // Time until next dash is available
 
     private Vector3 moveDirection; // Current movement direction
+    private Rigidbody rb; // Reference to the Rigidbody
+
+    public ParticleSystem dustTrail; // Reference to the Particle System for the dust trail
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>(); // Ensure we have a Rigidbody reference
+    }
 
     private void Update()
     {
         HandleMovement();
         HandleDash();
+        HandleDustTrail(); // Manage the dust trail
     }
 
     private void HandleMovement()
@@ -58,4 +67,22 @@ public class PlayerMovement : MonoBehaviour
             dashCooldownTime = dashCooldown; // Start cooldown
         }
     }
+
+    private void HandleDustTrail()
+    {
+        if (dustTrail == null) return;
+
+        // Check if the player is actively moving (based on input)
+        if (moveDirection.magnitude > 0.1f)
+        {
+            if (!dustTrail.isPlaying)
+                dustTrail.Play(); // Start the particle system when moving
+        }
+        else
+        {
+            if (dustTrail.isPlaying)
+                dustTrail.Stop(); // Stop the particle system when standing still
+        }
+    }
+
 }
