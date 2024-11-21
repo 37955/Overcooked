@@ -3,17 +3,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;     // Normal movement speed
-    public float dashSpeed = 15f;   // Dash speed
+    public float dashSpeed = 15f;    // Dash speed
     public float dashDuration = 0.2f; // Duration of the dash
-    public float dashCooldown = 1f; // Cooldown time for dashing
+    public float dashCooldown = 1f;  // Cooldown time for dashing
 
-    private float dashTimeLeft;     // Remaining dash time
-    private float dashCooldownTime; // Time until next dash is available
+    private float dashTimeLeft;      // Remaining dash time
+    private float dashCooldownTime;  // Time until next dash is available
+    private float dustDashTimeLeft;  // Time left for the dust dash effect
 
-    private Vector3 moveDirection; // Current movement direction
-    private Rigidbody rb; // Reference to the Rigidbody
+    private Vector3 moveDirection;  // Current movement direction
+    private Rigidbody rb;           // Reference to the Rigidbody
 
-    public ParticleSystem dustTrail; // Reference to the Particle System for the dust trail
+    public ParticleSystem dustTrail;  // Reference to the Particle System for the dust trail
+    public ParticleSystem dustDash;   // Reference to the Particle System for the dust dash effect
 
     private void Start()
     {
@@ -54,19 +56,34 @@ public class PlayerMovement : MonoBehaviour
         if (dashTimeLeft > 0)
         {
             dashTimeLeft -= Time.deltaTime;
+            dustDashTimeLeft -= Time.deltaTime;  // Decrease the dust dash timer
         }
         else
         {
             dashCooldownTime -= Time.deltaTime;
         }
 
-        // Start dash if E is pressed and dash is ready
-        if (Input.GetKeyDown(KeyCode.E) && dashCooldownTime <= 0)
+        // Start dash if E is pressed, dash is ready, and the player is moving
+        if (Input.GetKeyDown(KeyCode.E) && dashCooldownTime <= 0 && moveDirection.magnitude > 0.1f)
         {
-            dashTimeLeft = dashDuration;    // Activate dash
-            dashCooldownTime = dashCooldown; // Start cooldown
+            dashTimeLeft = dashDuration;       // Activate dash
+            dashCooldownTime = dashCooldown;   // Start cooldown
+            dustDashTimeLeft = dashDuration;   // Set dust dash duration to match dash duration
+
+            // Play the DustDash effect only when dash is triggered
+            if (dustDash != null)
+            {
+                dustDash.Play(); // Play the dash particle system
+            }
+        }
+
+        // Stop DustDash effect when dash is over
+        if (dustDashTimeLeft <= 0 && dustDash != null && dustDash.isPlaying)
+        {
+            dustDash.Stop(); // Stop the dash effect once the dash duration is over
         }
     }
+
 
     private void HandleDustTrail()
     {
@@ -84,5 +101,4 @@ public class PlayerMovement : MonoBehaviour
                 dustTrail.Stop(); // Stop the particle system when standing still
         }
     }
-
 }
