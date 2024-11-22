@@ -32,23 +32,32 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement()
     {
         // Get input from W, A, S, D keys
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
         // Create a movement direction vector
         moveDirection = new Vector3(horizontal, 0, vertical).normalized;
 
-        // Move the player
+        // Check if there's any input
         if (moveDirection.magnitude > 0.1f)
         {
-            float currentSpeed = (dashTimeLeft > 0) ? dashSpeed : moveSpeed; // Use dash speed if dashing
+            // Use dash speed if dashing, otherwise normal speed
+            float currentSpeed = (dashTimeLeft > 0) ? dashSpeed : moveSpeed;
+
+            // Move the player
             transform.Translate(moveDirection * currentSpeed * Time.deltaTime, Space.World);
 
-            // Make the player look in the direction they're moving
+            // Rotate the player to face the movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
+        else
+        {
+            // Stop all movement instantly when no input is detected
+            transform.Translate(Vector3.zero, Space.World);
+        }
     }
+
 
     private void HandleDash()
     {
