@@ -26,5 +26,8 @@ public class PlayerSwitch : MonoBehaviour
     {
         player1.GetComponent<PlayerMovement>().enabled = (newActivePlayer == player1);
         player2.GetComponent<PlayerMovement>().enabled = (newActivePlayer == player2);
+
+        player1.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player1);
+        player2.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player2);
     }
 }
