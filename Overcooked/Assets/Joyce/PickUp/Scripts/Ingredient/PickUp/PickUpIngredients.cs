@@ -37,12 +37,10 @@ public class PickUpIngredients : MonoBehaviour
             if (NearestCounter != null)
             {
                 float DistanceToCounter = Vector3.Distance(Player.transform.position, NearestCounter.transform.position);
-
                 if (DistanceToCounter <= 2f)
                 {
                     transform.position = NearestCounter.transform.position;
                 }
-
             }
         }
     }
