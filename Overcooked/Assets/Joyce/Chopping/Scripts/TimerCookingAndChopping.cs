@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class TimerCookingAndChopping : MonoBehaviour
 {
     [SerializeField] Slider cookingOrChoppingSlider;
+    [SerializeField] GameObject BodyOnion;
     [SerializeField] GameObject theSlider;
     [SerializeField] float ValueSlider;
 
     private GameObject player;
     private GameObject theCookingPlace;
     private bool isCooking = false;
-    private int theMinusValue = 10;
+    private int decreaseRate = 10;
     void Start()
     {
         player = GameObject.Find("Player");
@@ -21,7 +22,6 @@ public class TimerCookingAndChopping : MonoBehaviour
 
         updateSlider();
     }
-
     void Update()
     {
         if (Vector3.Distance(player.transform.position, theCookingPlace.transform.position) < 2)
@@ -44,10 +44,9 @@ public class TimerCookingAndChopping : MonoBehaviour
         }
         if (ValueSlider <= 0)
         {
-            Destroy(gameObject);
+            Destroy(BodyOnion);
+            theSlider.gameObject.SetActive(false);
         }
-
-
     }
 
     void updateSlider()
@@ -57,7 +56,7 @@ public class TimerCookingAndChopping : MonoBehaviour
     
     void minusValue()
     {
-        ValueSlider -= theMinusValue * Time.deltaTime;
+        ValueSlider -= decreaseRate * Time.deltaTime;
         updateSlider();
     }
 }
