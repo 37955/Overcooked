@@ -24,8 +24,27 @@ public class PlayerSwitch : MonoBehaviour
 
     private void SetActivePlayer(GameObject newActivePlayer)
     {
-        player1.GetComponent<PlayerMovement>().enabled = (newActivePlayer == player1);
-        player2.GetComponent<PlayerMovement>().enabled = (newActivePlayer == player2);
+        var player1Movement = player1.GetComponent<PlayerMovement>();
+        player1Movement.enabled = (newActivePlayer == player1);
+        if (newActivePlayer != player1)
+        {
+            if (player1Movement.dustTrail != null && player1Movement.dustTrail.isPlaying)
+                player1Movement.dustTrail.Stop();
+
+            if (player1Movement.dustDash != null && player1Movement.dustDash.isPlaying)
+                player1Movement.dustDash.Stop();
+        }
+
+        var player2Movement = player2.GetComponent<PlayerMovement>();
+        player2Movement.enabled = (newActivePlayer == player2);
+        if (newActivePlayer != player2)
+        {
+            if (player2Movement.dustTrail != null && player2Movement.dustTrail.isPlaying)
+                player2Movement.dustTrail.Stop();
+
+            if (player2Movement.dustDash != null && player2Movement.dustDash.isPlaying)
+                player2Movement.dustDash.Stop();
+        }
 
         player1.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player1);
         player2.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player2);
