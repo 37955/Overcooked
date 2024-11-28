@@ -1,60 +1,36 @@
 using NUnit.Framework.Internal;
-using UnityEditor;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class TimerCookingAndChopping : MonoBehaviour
 {
-<<<<<<< Updated upstream
     [SerializeField] Slider cookingOrChoppingSlider;
     [SerializeField] GameObject BodyOnion;
     [SerializeField] GameObject theSlider;
     [SerializeField] float ValueSlider;
-=======
-    [SerializeField] Slider cookingSlider;
-    [SerializeField] float maxSliderValue;
-    [SerializeField] float decreaseCount;
->>>>>>> Stashed changes
 
-    private GameObject theSlider;
     private GameObject player;
-    private GameObject choppingStation;
-    private GameObject bodyOnion;
-    private GameObject choppedOnion;
-    private float sliderValue;
-    private bool isCooking;
-    private bool canChop = true;
-
-    public bool canCook = false;
-
+    private GameObject theCookingPlace;
+    private bool isCooking = false;
+    private int decreaseRate = 10;
     void Start()
     {
         player = GameObject.Find("Player");
-        choppingStation = GameObject.Find("ChopPlace");
-        bodyOnion = GameObject.Find("OnionBody");
-        choppedOnion = GameObject.Find("ChoppedBody");
-        sliderValue = maxSliderValue;
-        theSlider = cookingSlider.gameObject;
-        choppedOnion.SetActive(false);
-        theSlider.SetActive(false);
+        theCookingPlace = GameObject.Find("CookingPlace");
+        theSlider.gameObject.SetActive(false);
 
         updateSlider();
     }
-
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, choppingStation.transform.position) < 2)
+        if (Vector3.Distance(player.transform.position, theCookingPlace.transform.position) < 2)
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl) && canChop)
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
                 isCooking = !isCooking;
-            }
-            if (isCooking)
-            {
-                decreaseCountSlider();
-                theSlider.SetActive(true);
+                Debug.Log("Toggled The IsCooking Bool");
+                theSlider.gameObject.SetActive(true);
             }
         }
         else
@@ -62,35 +38,25 @@ public class TimerCookingAndChopping : MonoBehaviour
             isCooking = false;
         }
 
-
-
-        if (sliderValue <= 0)
+        if (isCooking)
         {
-<<<<<<< Updated upstream
             minusValue();
         }
         if (ValueSlider <= 0)
         {
             Destroy(BodyOnion);
             theSlider.gameObject.SetActive(false);
-=======
-            bodyOnion.SetActive(false);
-            theSlider.SetActive(false);
-            choppedOnion.SetActive(true);
-            canChop = false;
-            canCook = true;
->>>>>>> Stashed changes
         }
     }
+
     void updateSlider()
     {
-        cookingSlider.value = sliderValue;
+        cookingOrChoppingSlider.value = ValueSlider;
     }
-    void decreaseCountSlider()
+
+    void minusValue()
     {
-        sliderValue -= decreaseCount * Time.deltaTime;
+        ValueSlider -= decreaseRate * Time.deltaTime;
         updateSlider();
     }
-
-
 }
