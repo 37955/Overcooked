@@ -53,12 +53,10 @@ public class TimerCookingAndChopping : MonoBehaviour
     {
         cookingOrChoppingSlider.value = ValueSlider;
     }
-    
+
     void minusValue()
     {
         ValueSlider -= decreaseRate * Time.deltaTime;
         updateSlider();
     }
 }
-
-
