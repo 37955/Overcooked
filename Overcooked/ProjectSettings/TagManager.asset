@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Counter
   - ChopCounter
+  - CookingPlace
   layers:
   - Default
   - TransparentFX
