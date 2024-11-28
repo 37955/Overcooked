@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TimerCookingAndChopping : MonoBehaviour
 {
     [SerializeField] Slider cookingOrChoppingSlider;
-    [SerializeField] GameObject BodyOnion;
+    [SerializeField] GameObject bodyOnion;
+    [SerializeField] GameObject bodyChoppedOnion;
     [SerializeField] GameObject theSlider;
     [SerializeField] float ValueSlider;
 
@@ -21,6 +22,7 @@ public class TimerCookingAndChopping : MonoBehaviour
         theSlider.gameObject.SetActive(false);
 
         updateSlider();
+        bodyChoppedOnion.SetActive(false);
     }
     void Update()
     {
@@ -44,8 +46,9 @@ public class TimerCookingAndChopping : MonoBehaviour
         }
         if (ValueSlider <= 0)
         {
-            Destroy(BodyOnion);
+            Destroy(bodyOnion);
             theSlider.gameObject.SetActive(false);
+            bodyChoppedOnion.SetActive(true);
         }
     }
 

@@ -31,6 +31,7 @@ public class PickUpIngredients : MonoBehaviour
         {
             transform.position = IngredientPlace.transform.position;
             rB.constraints = RigidbodyConstraints.None;
+            rB.constraints = RigidbodyConstraints.FreezeRotation;
         }
         else
         {
