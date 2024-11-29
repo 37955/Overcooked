@@ -4,6 +4,7 @@ public class PlayerSwitch : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
+    public CameraFollow cameraFollow; // Reference to the CameraFollow script
 
     private GameObject activePlayer;
 
@@ -48,5 +49,11 @@ public class PlayerSwitch : MonoBehaviour
 
         player1.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player1);
         player2.transform.Find("CanvasActivePlayer").gameObject.SetActive(newActivePlayer == player2);
+
+        // Update the camera's active player
+        if (cameraFollow != null)
+        {
+            cameraFollow.SetActivePlayer(newActivePlayer.transform);
+        }
     }
 }
