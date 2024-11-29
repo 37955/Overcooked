@@ -12,7 +12,7 @@ public class PickUpIngredients : MonoBehaviour
     Rigidbody rb;
     void Start()
     {
-        Counters = GameObject.FindGameObjectsWithTag("Counter"); 
+        Counters = GameObject.FindGameObjectsWithTag("PlaceForIngredientsToClickOn"); 
         rb = GetComponent<Rigidbody>();
     }
     void Update()
