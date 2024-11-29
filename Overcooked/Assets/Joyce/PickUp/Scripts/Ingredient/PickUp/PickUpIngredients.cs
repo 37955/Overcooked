@@ -9,14 +9,16 @@ public class PickUpIngredients : MonoBehaviour
     private GameObject Player;
     private bool IsHolding = true;
 
+    Rigidbody rb;
     void Start()
     {
-        Counters = GameObject.FindGameObjectsWithTag("Counter");    
+        Counters = GameObject.FindGameObjectsWithTag("Counter"); 
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
         IngredientPlace = GameObject.Find("IngredientPlace");
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("player");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -29,6 +31,8 @@ public class PickUpIngredients : MonoBehaviour
         if (IsHolding)
         {
             transform.position = IngredientPlace.transform.position;
+            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
         }
         else
         {
@@ -40,6 +44,7 @@ public class PickUpIngredients : MonoBehaviour
                 if (DistanceToCounter <= 2f)
                 {
                     transform.position = NearestCounter.transform.position;
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
                 }
             }
         }
