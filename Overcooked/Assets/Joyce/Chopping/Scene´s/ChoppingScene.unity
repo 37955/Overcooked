@@ -320,6 +320,7 @@ Transform:
   - {fileID: 1549431063}
   - {fileID: 674208536}
   - {fileID: 1310327523}
+  - {fileID: 1075490731}
   m_Father: {fileID: 1315120321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195039645
@@ -332,8 +333,8 @@ GameObject:
   m_Component:
   - component: {fileID: 195039646}
   m_Layer: 0
-  m_Name: Counter
-  m_TagString: Counter
+  m_Name: PlaceForIngredients
+  m_TagString: PlaceForIngredientsToClickOn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +474,7 @@ GameObject:
   - component: {fileID: 326749544}
   m_Layer: 0
   m_Name: PlaceForIngredients
-  m_TagString: Counter
+  m_TagString: PlaceForIngredientsToClickOn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,6 +772,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1075490730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075490731}
+  m_Layer: 0
+  m_Name: CookingCounters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075490731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075490730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 189275002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106689770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7575953808078954953, guid: d8441d8227cd72d44bfc1c8049b50054, type: 3}
@@ -1192,7 +1224,7 @@ GameObject:
   - component: {fileID: 1451474978}
   m_Layer: 0
   m_Name: PlaceForIngredients
-  m_TagString: Counter
+  m_TagString: PlaceForIngredientsToClickOn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1577,15 +1609,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6905007948483261063, guid: f29400279e42a754c92e1c01ed1ad409, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8852066838566317576, guid: f29400279e42a754c92e1c01ed1ad409, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8852066838566317576, guid: f29400279e42a754c92e1c01ed1ad409, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
