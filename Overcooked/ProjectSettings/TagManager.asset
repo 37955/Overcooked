@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Counter
-  - ChopCounter
   - PlaceForIngredientsToClickOn
+  - chopCounter
+  - cookCounter
+  - pan
   layers:
   - Default
   - TransparentFX
