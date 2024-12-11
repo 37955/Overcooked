@@ -7,9 +7,11 @@ public class sliderChopEnabler : MonoBehaviour
     [SerializeField] SliderChop sliderChopScript;
     [SerializeField] GameObject theCookSliderGameObject;
 
-    private GameObject player;
+    private GameObject player1;
+    private GameObject player2;
     private GameObject[] chopCounters;
-    private Collider playerCollider;
+    private Collider playerCollider1;
+    private Collider playerCollider2;
     private Collider counterCollider;
     private Collider thisObjectCollider;
     private bool isTouchingCounter;
@@ -17,10 +19,12 @@ public class sliderChopEnabler : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("player");
+        player1 = GameObject.Find("player1");
+        player2 = GameObject.Find("player2");
         chopCounters = GameObject.FindGameObjectsWithTag("chopCounter");
 
-        playerCollider = player.GetComponent<Collider>();
+        playerCollider1 = player1.GetComponent<Collider>();
+        playerCollider2 = player2.GetComponent<Collider>();
         thisObjectCollider = gameObject.GetComponent<Collider>();
 
         theCookSliderGameObject.SetActive(false);
@@ -32,9 +36,14 @@ public class sliderChopEnabler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider == playerCollider)
+        if (collision.collider == playerCollider1)
         {
             isTouchingPlayer = true;
+        }
+
+        if (collision.collider == playerCollider2) 
+        {
+            isTouchingCounter = true;
         }
 
         if (collision.collider == counterCollider)

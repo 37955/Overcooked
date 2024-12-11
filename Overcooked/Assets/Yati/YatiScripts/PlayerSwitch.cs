@@ -6,7 +6,7 @@ public class PlayerSwitch : MonoBehaviour
     public GameObject player2;
     public CameraFollow cameraFollow; // Reference to the CameraFollow script
 
-    private GameObject activePlayer;
+    public GameObject activePlayer;
 
     private void Start()
     {

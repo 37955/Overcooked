@@ -8,6 +8,7 @@ public class RadialProgress : MonoBehaviour
     [SerializeField] private float reverseSpeed = 50;
     [SerializeField] private Canvas canvas;
     [SerializeField] private Canvas timerCanvas;
+    [SerializeField] private Canvas orderCanvas;
 
     float currentValue;
 
@@ -43,22 +44,25 @@ public class RadialProgress : MonoBehaviour
 
             if (currentValue < 100)
             {
-                HideTimer();
+                HideTimerandOrder();
+                
             }
 
             if(currentValue >= 100)
             {
-                ShowTimer();
+                ShowTimerandOrder();
             }
         }
     }
 
-    private void ShowTimer()
+    private void ShowTimerandOrder()
     {
+        orderCanvas.gameObject.SetActive(true);
         timerCanvas.gameObject.SetActive(true);
     }
-    private void HideTimer()
+    private void HideTimerandOrder()
     {
+        orderCanvas.gameObject.SetActive(false);
         timerCanvas.gameObject.SetActive(false);
     }
     private void HideCanvas()
