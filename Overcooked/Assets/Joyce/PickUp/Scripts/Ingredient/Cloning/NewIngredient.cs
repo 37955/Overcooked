@@ -8,17 +8,29 @@ public class NewIngredient : MonoBehaviour
     [SerializeField] GameObject IngredientBox;
 
     private GameObject IngredientClone;
-    void Update()
+    bool canGetIngredient;
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (collision.gameObject.tag == "Player")
         {
-            if (Vector3.Distance(player1.transform.position, IngredientBox.transform.position) < 1 || Vector3.Distance(player2.transform.position, IngredientBox.transform.position) < 1)
-            {
-                GetNewIngredient();
-            }
+            canGetIngredient = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            canGetIngredient = false;
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canGetIngredient)
+        {
+            GetNewIngredient();
+        }
+    }
     void GetNewIngredient()
     {
         IngredientClone = Instantiate(TheIngredientToClone);
