@@ -9,6 +9,7 @@ TagManager:
   - chopCounter
   - cookCounter
   - pan
+  - Ingredient
   layers:
   - Default
   - TransparentFX

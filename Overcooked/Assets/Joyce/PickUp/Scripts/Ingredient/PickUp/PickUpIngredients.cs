@@ -17,13 +17,14 @@ public class PickUpIngredients : MonoBehaviour
         targetScript = GameObject.Find("PlayerSwitch").GetComponent<PlayerSwitch>();
         Counters = GameObject.FindGameObjectsWithTag("PlaceForIngredientsToClickOn"); 
         rb = GetComponent<Rigidbody>();
-    }
-    void Update()
-    {
         IngredientPlace1 = GameObject.Find("IngredientPlace1");
         IngredientPlace2 = GameObject.Find("IngredientPlace2");
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
+    }
+    void Update()
+    {
+       
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
