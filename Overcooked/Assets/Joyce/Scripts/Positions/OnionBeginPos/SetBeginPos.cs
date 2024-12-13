@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class SetBeginPos : MonoBehaviour
 {
-    [SerializeField] Vector3 ingredientPos;
+    [SerializeField] Vector3 startingpos;
     private void Start()
     {
-        transform.position = ingredientPos;
+        transform.position = startingpos;
     }
+
 }
+    

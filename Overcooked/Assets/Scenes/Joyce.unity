@@ -508,6 +508,37 @@ Transform:
   - {fileID: 1049367515}
   m_Father: {fileID: 784905780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573615206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573615207}
+  m_Layer: 0
+  m_Name: IngredientPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573615207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573615206}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2090742063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580880447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1328,7 @@ Transform:
   m_Children:
   - {fileID: 1218855688}
   - {fileID: 360515632}
+  - {fileID: 1701708292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229409437
@@ -1380,7 +1412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe50a4e134b702547b5469caa4b7ec88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeForIngredients: {x: 0, y: 0, z: 1}
+  pickupRange: 2
+  holdPlace: {fileID: 1701708292}
 --- !u!1 &1392071814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1568,37 @@ MonoBehaviour:
   player2: {fileID: 2090742059}
   cameraFollow: {fileID: 983727407}
   activePlayer: {fileID: 0}
+--- !u!1 &1701708291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701708292}
+  m_Layer: 0
+  m_Name: IngredientPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701708292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701708291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1229409436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976046249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1734,7 @@ Transform:
   m_Children:
   - {fileID: 973740372}
   - {fileID: 89423430}
+  - {fileID: 573615207}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2090742064
@@ -1684,8 +1749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe50a4e134b702547b5469caa4b7ec88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeForIngredients: {x: 0, y: 0, z: 1}
---- !u!1001 &4451906299899527058
+  pickupRange: 2
+  holdPlace: {fileID: 573615207}
+--- !u!1001 &8332908965276243467
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1703,15 +1769,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008419882657830124, guid: 444f5a6466d2e8c4993e9a1ad9a0560d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.18
       objectReference: {fileID: 0}
     - target: {fileID: 4008419882657830124, guid: 444f5a6466d2e8c4993e9a1ad9a0560d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 4008419882657830124, guid: 444f5a6466d2e8c4993e9a1ad9a0560d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6
+      value: -5.19
       objectReference: {fileID: 0}
     - target: {fileID: 4008419882657830124, guid: 444f5a6466d2e8c4993e9a1ad9a0560d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1754,4 +1820,4 @@ SceneRoots:
   - {fileID: 855867600}
   - {fileID: 1229409436}
   - {fileID: 2090742063}
-  - {fileID: 4451906299899527058}
+  - {fileID: 8332908965276243467}
