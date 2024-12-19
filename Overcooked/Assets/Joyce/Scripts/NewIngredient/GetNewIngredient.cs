@@ -5,7 +5,6 @@ public class GetNewIngredient : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
 
-    private GameObject playerColl;
     private GameObject theClone;
     private bool canGetIngredient;
 
@@ -15,7 +14,6 @@ public class GetNewIngredient : MonoBehaviour
         {
             canGetIngredient = true;
         }
-        Debug.Log("Can get ingredient");
     }
 
     private void OnCollisionExit(Collision collision)
@@ -24,12 +22,6 @@ public class GetNewIngredient : MonoBehaviour
         {
             canGetIngredient = false;
         }
-        Debug.Log("Nope you can't get ingredient");
-    }
-
-    private void Start()
-    {
-
     }
 
     private void Update()

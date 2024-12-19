@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class HoldIngredient : MonoBehaviour
 {
-    [SerializeField] float pickupRange;
+    [SerializeField] PlayerSwitch playerSwitchScript;
     [SerializeField] Transform holdPlace;
+    [SerializeField] float pickupRange;
 
     private GameObject CurrentIngredient;
     private bool isholding = false;
