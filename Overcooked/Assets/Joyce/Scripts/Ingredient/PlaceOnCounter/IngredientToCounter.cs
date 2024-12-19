@@ -18,11 +18,10 @@ public class IngredientToCounter : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-               
+               moveToCounterPlace();
             }
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Counter"))
