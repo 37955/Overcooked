@@ -4,41 +4,44 @@ using UnityEngine;
 public class GetNewIngredient : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
-    private GameObject theIngredient;
-    private bool playerInRange;
-    private bool ingredientIsOnBox;
+
+    private GameObject playerColl;
+    private GameObject theClone;
+    private bool canGetIngredient;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.collider.CompareTag("Player"))
         {
-            playerInRange = true;
+            canGetIngredient = true;
         }
+        Debug.Log("Can get ingredient");
     }
+
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.collider.CompareTag("Player"))
         {
-            playerInRange = false;
+            canGetIngredient = false;
         }
-        if (collision.gameObject.tag == "Ingredient")
-        {
-            ingredientIsOnBox = false;
-        }
+        Debug.Log("Nope you can't get ingredient");
+    }
+
+    private void Start()
+    {
+
     }
 
     private void Update()
     {
-        if (playerInRange && !ingredientIsOnBox && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canGetIngredient)
         {
-            Debug.Log("function is aangeroepen");
             getNewIngredient();
         }
     }
 
     void getNewIngredient()
     {
-        theIngredient = Instantiate(ingredientPrefab);
-        ingredientIsOnBox = true;
+        theClone = Instantiate(ingredientPrefab);
     }
 }
