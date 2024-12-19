@@ -57,12 +57,6 @@ public class HoldIngredient : MonoBehaviour
     {
         CurrentIngredient = ingredient;
         isholding = true;
-
-        Rigidbody ingredientRB = CurrentIngredient.GetComponent<Rigidbody>();
-        if (ingredient != null)
-        {
-            ingredientRB.isKinematic = true;
-        }
         updateIngredientPos();
     }
     private void updateIngredientPos()
@@ -74,11 +68,6 @@ public class HoldIngredient : MonoBehaviour
     }
     private void dropIngredient()
     {
-        if (CurrentIngredient != null)
-        {
-            Rigidbody ingredientRB = CurrentIngredient.GetComponent<Rigidbody>();
-            ingredientRB.isKinematic= false;
-        }
         CurrentIngredient = null;
         isholding = false;
     }
