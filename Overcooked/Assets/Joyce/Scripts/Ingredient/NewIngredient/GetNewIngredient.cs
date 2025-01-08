@@ -15,7 +15,6 @@ public class GetNewIngredient : MonoBehaviour
             canGetIngredient = true;
         }
     }
-
     private void OnCollisionExit(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -23,7 +22,6 @@ public class GetNewIngredient : MonoBehaviour
             canGetIngredient = false;
         }
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && canGetIngredient)
@@ -31,7 +29,6 @@ public class GetNewIngredient : MonoBehaviour
             getNewIngredient();
         }
     }
-
     void getNewIngredient()
     {
         theClone = Instantiate(ingredientPrefab);
