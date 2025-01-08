@@ -1,15 +1,15 @@
  Begin = 5 tot 10 minuten
 
 
-1. In het begin wisten de testers niet hoe ze de trein moesten starten.
+1. Ze zaten veel om de hendel te rommelen.
 Oplossing ->
 Misschien een tutorial aan het begin van de game, zodat ze wisten hoe ze moesten beginnen.
 
-2. De hamer was heel buggy en ging vaak door de kasten, waardoor het lastig was om de hamer weer te pakken.
+2. Ze gooiden de hamer steeds weg.
 Oplossing->
 Specifieke plek voor de hamer als je hem terug wilt leggen.
 
-3.Ze zaten voor een lange periode vast in de trein, omdat ze niet wisten hoe ze de deuren van de trein moesten openen.
+3.Ze liepen vaak tegen de dichte deuren aan.
 Oplossing->
 icoontjes die aangeven wat iets doet en misschien was het ook handig om nog een handleiding er bij te doen.
 
