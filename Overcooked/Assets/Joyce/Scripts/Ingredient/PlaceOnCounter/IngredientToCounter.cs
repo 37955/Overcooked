@@ -44,6 +44,7 @@ public class IngredientToCounter : MonoBehaviour
     {
         transform.position = ingredientPlacesCounter.transform.position;
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        Debug.Log("Is naar de counter gegaan");
     }
 
     void resetRB()
