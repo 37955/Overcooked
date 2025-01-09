@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StateCheckerIngredient : MonoBehaviour
 {
-    private bool[] statesIngredient = new bool[3];
+   [SerializeField] private bool[] statesIngredient = new bool[3];
 
     private void Start()
     {
