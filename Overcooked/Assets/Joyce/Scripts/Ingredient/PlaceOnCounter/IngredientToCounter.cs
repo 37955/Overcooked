@@ -26,6 +26,15 @@ public class IngredientToCounter : MonoBehaviour
     {
         if (collision.collider.CompareTag("Counter"))
         {
+            ThereisAnCollision();
+        }
+        if (collision.collider.CompareTag("chopCounter"))
+        {
+            ThereisAnCollision();
+        }
+
+        void ThereisAnCollision()
+        {
             ingredientPlacesCounter = collision.collider.transform.Find("IngredientPlace").gameObject;
             Debug.Log("raakt counter aan");
             canPlace = true;
@@ -35,11 +44,21 @@ public class IngredientToCounter : MonoBehaviour
     {
         if (collision.collider.CompareTag("Counter"))
         {
+            OutOfCollider();
+        }
+        if (collision.collider.CompareTag("chopCounter"))
+        {
+            OutOfCollider();
+        }
+
+        void OutOfCollider()
+        {
             Debug.Log("uit de counter coll");
             canPlace = false;
             resetRB();
         }
     }
+
     void moveToCounterPlace()
     {
         transform.position = ingredientPlacesCounter.transform.position;
