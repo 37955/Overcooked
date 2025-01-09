@@ -12,6 +12,7 @@ TagManager:
   - Ingredient
   - IngredientBox
   - ChopIngredient
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class IngredientToCounter : MonoBehaviour
+public class ItemToCounter : MonoBehaviour
 {
     private GameObject ingredientPlacesCounter;
     private Rigidbody rb;
