@@ -11,6 +11,10 @@ public class ItemToCounter : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.Log("rb is niet gevonden :p");
+        }
     }
     private void Update()
     {
@@ -24,11 +28,7 @@ public class ItemToCounter : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Counter"))
-        {
-            ThereisAnCollision();
-        }
-        if (collision.collider.CompareTag("chopCounter"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PlaceCounter"))
         {
             ThereisAnCollision();
         }
@@ -42,15 +42,10 @@ public class ItemToCounter : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.collider.CompareTag("Counter"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PlaceCounter"))
         {
             OutOfCollider();
         }
-        if (collision.collider.CompareTag("chopCounter"))
-        {
-            OutOfCollider();
-        }
-
         void OutOfCollider()
         {
             Debug.Log("uit de counter coll");

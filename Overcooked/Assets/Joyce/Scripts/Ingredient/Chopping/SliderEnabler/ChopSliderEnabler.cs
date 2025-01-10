@@ -8,7 +8,7 @@ public class ChopSliderEnabler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("chopCounter"))
+        if (collision.collider.CompareTag("ChopCounter"))
         {
             Debug.Log("can enable the slider");
             canEnableSlider = true;

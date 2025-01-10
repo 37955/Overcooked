@@ -5,14 +5,14 @@ TagManager:
   serializedVersion: 3
   tags:
   - Counter
-  - PlaceForIngredientsToClickOn
-  - chopCounter
-  - cookCounter
-  - pan
+  - ChopCounter
+  - CookingCounter
   - Ingredient
   - IngredientBox
-  - ChopIngredient
-  - Item
+  - PlaceForIngredientsToClickOn
+  - Pan
+  - cookCounter
+  - chopCounter
   layers:
   - Default
   - TransparentFX
@@ -20,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Item
+  - Players
+  - PlaceCounter
   - 
   - 
   - 

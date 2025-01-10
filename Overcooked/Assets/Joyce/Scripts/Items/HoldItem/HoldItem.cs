@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class HoldItem : MonoBehaviour
 {
-    [SerializeField] PlayerSwitch playerSwitchScript;
     [SerializeField] Transform holdPlace;
     [SerializeField] float pickupRange;
 
@@ -46,7 +45,7 @@ public class HoldItem : MonoBehaviour
         Collider[] theItemColls = Physics.OverlapSphere(transform.position, pickupRange);
         foreach (Collider colliders in theItemColls)
         {
-            if (colliders.CompareTag("Item"))
+            if (colliders.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 return colliders;
             }
