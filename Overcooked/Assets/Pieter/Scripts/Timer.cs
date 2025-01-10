@@ -3,14 +3,15 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float timerDuration = 150f; // Set this in the Inspector
+    public float timerDuration = 150f; 
     private float currentTime;
-    public TMP_Text timerText; // Reference to a TextMeshProUGUI object
-    public AudioSource beepSound; // Reference to an AudioSource for the beep sound
-    public AudioSource backgroundMusic; // Reference to BackgroundMusic AudioSource
+    public TMP_Text timerText; 
+    public AudioSource beepSound; 
+    public AudioSource backgroundMusic;
 
-    private bool isBeeping = false; // Flag to ensure the beeping sound is played only once per second
-    private bool hasSpedUpMusic = false; // Flag to avoid speeding up music multiple times
+    //Fields and variables: booleans die vragen beantwoorden.
+    private bool isBeeping = false; 
+    private bool hasSpedUpMusic = false; 
 
     void Start()
     {
@@ -24,16 +25,14 @@ public class CountdownTimer : MonoBehaviour
         if (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
-            currentTime = Mathf.Max(currentTime, 0); // Clamp to 0 to avoid negative values
+            currentTime = Mathf.Max(currentTime, 0); 
             UpdateTimerUI();
 
-            // Speed up the background music when 30 seconds are left
             if (currentTime <= 30 && !hasSpedUpMusic)
             {
                 SpeedUpMusic();
             }
 
-            // Check if the timer is 10 seconds or less
             if (currentTime <= 10 && !isBeeping)
             {
                 StartBeeping();
@@ -45,9 +44,9 @@ public class CountdownTimer : MonoBehaviour
     {
         if (timerText != null)
         {
-            int minutes = Mathf.FloorToInt(currentTime / 60); // Calculate minutes
-            int seconds = Mathf.FloorToInt(currentTime % 60); // Calculate seconds
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); // Format as MM:SS
+            int minutes = Mathf.FloorToInt(currentTime / 60); 
+            int seconds = Mathf.FloorToInt(currentTime % 60); 
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); 
         }
     }
 
@@ -55,7 +54,7 @@ public class CountdownTimer : MonoBehaviour
     {
         if (backgroundMusic != null)
         {
-            backgroundMusic.pitch = 1.25f; // Double the speed
+            backgroundMusic.pitch = 1.25f; 
         }
         hasSpedUpMusic = true;
     }
@@ -64,10 +63,10 @@ public class CountdownTimer : MonoBehaviour
     {
         if (beepSound != null)
         {
-            beepSound.Play(); // Play the beep sound
+            beepSound.Play(); 
         }
-        isBeeping = true; // Prevent multiple plays in the same second
-        Invoke("ResetBeeping", 1f); // Reset the flag after 1 second
+        isBeeping = true;
+        Invoke("ResetBeeping", 1f);
     }
 
     void ResetBeeping()

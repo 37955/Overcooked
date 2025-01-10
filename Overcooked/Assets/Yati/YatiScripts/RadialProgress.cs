@@ -54,7 +54,7 @@ public class RadialProgress : MonoBehaviour
             }
         }
     }
-
+    //Classes and interfaces: Classes gebruiken pascal case.
     private void ShowTimerandOrder()
     {
         orderCanvas.gameObject.SetActive(true);
