@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397634756144622175}
   - component: {fileID: 5461884435921196201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChopCounter
   m_TagString: chopCounter
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7110302715230302468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IngredientPlace
   m_TagString: PlaceForIngredientsToClickOn
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7388961926018185693}
   - component: {fileID: 7938288503740613501}
   - component: {fileID: 7372862155896298455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
