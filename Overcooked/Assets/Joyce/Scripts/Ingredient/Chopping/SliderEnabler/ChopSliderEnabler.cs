@@ -13,13 +13,6 @@ public class ChopSliderEnabler : MonoBehaviour
             canEnableSlider = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.CompareTag("ChopCounter"))
-        {
-            canEnableSlider = false;
-        }
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && stateScriptIngredient.CanChop &&canEnableSlider)

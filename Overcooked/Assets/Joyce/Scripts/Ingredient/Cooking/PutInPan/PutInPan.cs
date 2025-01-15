@@ -3,23 +3,24 @@ using UnityEngine;
 public class PutInPan : MonoBehaviour
 {
     [SerializeField] StateCheckerIngredient stateCheckerScript;
-    private bool canPutAway;
-
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] IngredientCollisionDetector collisionDetectorScript;
+    HoldIngredientCount holdIngredientCountScript;
+    private void Start()
     {
-        if (collision.collider.CompareTag("Pan"))
+        holdIngredientCountScript = FindObjectOfType<HoldIngredientCount>();
+
+        if (holdIngredientCountScript != null)
         {
-            Debug.Log("collision met de pan");
-            canPutAway = true;
+            Debug.Log("Wel script");
         }
     }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && canPutAway && stateCheckerScript.CanCook)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && collisionDetectorScript.TouchesPan && stateCheckerScript.CanCook && holdIngredientCountScript.ingredientCount < 3)
         {
             Debug.Log("Should destroy");
             Destroy(gameObject);
+            holdIngredientCountScript.ingredientCount ++;
         }
     }
 
