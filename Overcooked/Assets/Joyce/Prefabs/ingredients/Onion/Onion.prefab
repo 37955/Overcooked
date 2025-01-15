@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theChopSlider: {fileID: 7926573596370866447}
-  theTime: 0
 --- !u!1 &4706970716470489241
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,11 +114,14 @@ GameObject:
   - component: {fileID: 3174475161631981752}
   - component: {fileID: 8124666443421261036}
   - component: {fileID: 2484201209305044705}
+  - component: {fileID: 2404073790965673759}
+  - component: {fileID: 5044402162285547067}
   - component: {fileID: 6864585172582733732}
   - component: {fileID: 3077506350330472977}
-  - component: {fileID: 4473184604166824653}
   - component: {fileID: 1429267851494261632}
-  - component: {fileID: 5044402162285547067}
+  - component: {fileID: 7535941114402859251}
+  - component: {fileID: 4473184604166824653}
+  - component: {fileID: 8270629719328758200}
   m_Layer: 6
   m_Name: Onion
   m_TagString: Ingredient
@@ -191,7 +193,32 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.14, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2404073790965673759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706970716470489241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f0499756d4f7e4f931b8378ac11cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5044402162285547067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706970716470489241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb3c7326d226b54684c5310306d4f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statesIngredient: 000000
 --- !u!114 &6864585172582733732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,20 +245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theChopSlider: {fileID: 1191948372686857745}
   stateScriptIngredient: {fileID: 5044402162285547067}
---- !u!114 &4473184604166824653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4706970716470489241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8a1c6867c15104880d4465769cb7ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theChopSlider: {fileID: 7926573596370866447}
-  choppedIngredient: {fileID: 3470387037506257675}
 --- !u!114 &1429267851494261632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theChopSlider: {fileID: 7926573596370866447}
   onionBody: {fileID: 3788122401698387133}
---- !u!114 &5044402162285547067
+--- !u!114 &7535941114402859251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,10 +268,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4706970716470489241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb3c7326d226b54684c5310306d4f87, type: 3}
+  m_Script: {fileID: 11500000, guid: b39e9c86f75d0604b9e90908edf81d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statesIngredient: 000000
+  stateCheckerScript: {fileID: 5044402162285547067}
+  theChopSlider: {fileID: 7926573596370866447}
+--- !u!114 &4473184604166824653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706970716470489241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8a1c6867c15104880d4465769cb7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theChopSlider: {fileID: 7926573596370866447}
+  choppedIngredient: {fileID: 3470387037506257675}
+--- !u!114 &8270629719328758200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706970716470489241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2226863dd226046abed083e4c3ca36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateCheckerScript: {fileID: 5044402162285547067}
 --- !u!1 &4937176563644748828
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,6 @@ public class ItemToCounter : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            Debug.Log("rb is niet gevonden :p");
-        }
     }
     private void Update()
     {
@@ -36,7 +32,6 @@ public class ItemToCounter : MonoBehaviour
         void ThereisAnCollision()
         {
             ingredientPlacesCounter = collision.collider.transform.Find("IngredientPlace").gameObject;
-            Debug.Log("raakt counter aan");
             canPlace = true;
         }
     }
@@ -48,7 +43,6 @@ public class ItemToCounter : MonoBehaviour
         }
         void OutOfCollider()
         {
-            Debug.Log("uit de counter coll");
             canPlace = false;
             resetRB();
         }
@@ -58,7 +52,6 @@ public class ItemToCounter : MonoBehaviour
     {
         transform.position = ingredientPlacesCounter.transform.position;
         rb.constraints = RigidbodyConstraints.FreezeAll;
-        Debug.Log("Is naar de counter gegaan");
     }
 
     void resetRB()

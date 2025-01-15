@@ -10,8 +10,14 @@ public class ChopSliderEnabler : MonoBehaviour
     {
         if (collision.collider.CompareTag("ChopCounter"))
         {
-            Debug.Log("can enable the slider");
             canEnableSlider = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("ChopCounter"))
+        {
+            canEnableSlider = false;
         }
     }
     private void Update()
@@ -25,6 +31,5 @@ public class ChopSliderEnabler : MonoBehaviour
     void enableTheSlider()
     {
         theChopSlider.SetActive(true);
-        Debug.Log("enabled the slider");
     }
 }
