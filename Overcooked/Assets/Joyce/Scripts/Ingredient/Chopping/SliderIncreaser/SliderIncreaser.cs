@@ -25,7 +25,7 @@ public class SliderIncreaser : MonoBehaviour
         theTime += Time.deltaTime;
      
         {
-            if (theTime >= resetTime && collisionDetectorScript.TouchesPan && collisionDetectorScript.TouchPlayer)
+            if (theTime >= resetTime && collisionDetectorScript.TouchesCounter && collisionDetectorScript.TouchesPlayer)
             {
                 IncreaseTheSlider();
                 ResetTheTime();
