@@ -6,6 +6,7 @@ public class ChopSliderDisabler : MonoBehaviour
 {
     [SerializeField] Slider theChopSlider;
     [SerializeField] GameObject onionBody;
+
     private void Update()
     {
         if (theChopSlider.value == 100)

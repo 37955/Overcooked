@@ -6,26 +6,30 @@ using UnityEngine.UI;
 public class SliderIncreaser : MonoBehaviour
 {
     [SerializeField] Slider theChopSlider;
-  
+    [SerializeField] IngredientCollisionDetector collisionDetectorScript;
+    private GameObject[] players = new GameObject[1];
     private float sliderValue;
-    private float increaseValue = 15;
-    [SerializeField]private float theTime;
+    private float increaseValue = 5;
+    private float theTime;
     private float resetTime = 0.3f;
 
     private void Start()
     {
         sliderValue = 0;
         UpdateTheSlider();
+
     }
 
     private void Update()
     {
         theTime += Time.deltaTime;
-
-        if (theTime >= resetTime)
+     
         {
-            IncreaseTheSlider();
-            ResetTheTime();
+            if (theTime >= resetTime && collisionDetectorScript.TouchesPan && collisionDetectorScript.TouchPlayer)
+            {
+                IncreaseTheSlider();
+                ResetTheTime();
+            }
         }
     }
     void UpdateTheSlider()
