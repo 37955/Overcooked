@@ -38,7 +38,7 @@ public class SliderIncreaser : MonoBehaviour
     }
     void IncreaseTheSlider()
     {
-        if (sliderValue != 100 && sliderValue !> 100)
+        if (sliderValue != 100)
         {
             sliderValue += increaseValue;
             UpdateTheSlider();
