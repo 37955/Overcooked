@@ -1,9 +1,11 @@
 using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class GetNewIngredient : MonoBehaviour
 {
     [SerializeField] GameObject ingredientPrefab;
+    [SerializeField] Transform ingredientPlace;
 
     private GameObject theClone;
     private bool canGetIngredient;
@@ -32,5 +34,6 @@ public class GetNewIngredient : MonoBehaviour
     void getNewIngredient()
     {
         theClone = Instantiate(ingredientPrefab);
+        theClone.transform.position = ingredientPlace.transform.position;
     }
 }

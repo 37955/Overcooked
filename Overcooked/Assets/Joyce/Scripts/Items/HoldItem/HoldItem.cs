@@ -7,7 +7,7 @@ public class HoldItem : MonoBehaviour
     [SerializeField] float pickupRange;
 
     private GameObject CurrentItem;
-    private bool isholding = false;
+    private bool isholding = true;
 
     private void Update()
     {
