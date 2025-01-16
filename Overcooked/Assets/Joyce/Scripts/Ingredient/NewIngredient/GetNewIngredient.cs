@@ -33,7 +33,7 @@ public class GetNewIngredient : MonoBehaviour
     }
     void getNewIngredient()
     {
+        
         theClone = Instantiate(ingredientPrefab);
-        theClone.transform.position = ingredientPlace.transform.position;
     }
 }
