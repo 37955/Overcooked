@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5569122718654796803}
   - component: {fileID: 7926573596370866447}
-  - component: {fileID: 8006852608939480554}
   m_Layer: 5
   m_Name: ChopSlider
   m_TagString: Untagged
@@ -90,20 +89,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8006852608939480554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191948372686857745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8fc287cb2e87e41870153e6560a6d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theChopSlider: {fileID: 7926573596370866447}
-  collisionDetectorScript: {fileID: 2404073790965673759}
 --- !u!1 &4706970716470489241
 GameObject:
   m_ObjectHideFlags: 0

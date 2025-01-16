@@ -4,25 +4,22 @@ public class IngredientCollisionDetector : MonoBehaviour
 {
     private bool touchesPlayer;
     private bool touchesPan;
-    private bool touchesCounter;
+    private bool touchesChopCounter;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Is touching the player");
             touchesPlayer = true;
         }
 
         if (collision.collider.CompareTag("Pan"))
         {
-            Debug.Log("Is touching the Pan");
             touchesPan = true;
         }
 
         if (collision.collider.CompareTag("ChopCounter"))
         {
-            Debug.Log("Is touching the Counter");
-            touchesCounter = true;
+            touchesChopCounter = true;
         }
     }
 
@@ -30,20 +27,45 @@ public class IngredientCollisionDetector : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Is NOT touching the player");
             touchesPlayer = false;
         }
 
         if (collision.collider.CompareTag("Pan"))
         {
-            Debug.Log("Is NOT touching the Pan");
             touchesPan = false;
         }
 
         if (collision.collider.CompareTag("ChopCounter"))
         {
-            Debug.Log("Is NOT touching the counter");
-            touchesCounter = false;
+            touchesChopCounter = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+
+            touchesPlayer = true;
+        }
+        if (other.gameObject.CompareTag("ChopCounter"))
+        {
+
+            touchesChopCounter = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("no trigger player");
+            touchesPlayer = false;
+        }
+        if (other.gameObject.CompareTag("ChopCounter"))
+        {
+            Debug.Log("no trigger chopcounter");
+            touchesChopCounter = false;
         }
     }
 
@@ -57,8 +79,9 @@ public class IngredientCollisionDetector : MonoBehaviour
         get { return touchesPan; }
     }
 
-    public bool TouchesCounter
+    public bool TouchesChopCounter
     {
-        get { return touchesCounter; }
+        get { return touchesChopCounter; }
     }
+
 }
