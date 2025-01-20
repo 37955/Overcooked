@@ -6,7 +6,6 @@ public class ChopSliderEnabler : MonoBehaviour
     [SerializeField] StateCheckerIngredient stateScriptIngredient;
     [SerializeField] IngredientCollisionDetector collisionDetectorScript;
 
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && stateScriptIngredient.CanChop && collisionDetectorScript.TouchesChopCounter)
@@ -14,7 +13,6 @@ public class ChopSliderEnabler : MonoBehaviour
             enableTheSlider();
         }
     }
-
     void enableTheSlider()
     {
         theChopSlider.SetActive(true);
