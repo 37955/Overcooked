@@ -11,17 +11,25 @@ public class AlarmMaxSlider : MonoBehaviour
     private float alarmCount;
     private bool alarmImageEnabled;
 
+    private void Start()
+    {
+        alarmCount = 0;
+        alarmImage.SetActive(false);
+    }
     private void Update()
     {
+
+
         if (cookSlider.value == 100 && alarmCount <= 6)
         {
             AlarmOn();
         }
-        if (alarmCount == 6 && theTime == 0f)
+        else if (alarmCount == 6)
         {
             alarmImage.SetActive(false);
             alarmImageEnabled = false;
         }
+
     }
 
     void AlarmOn()

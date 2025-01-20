@@ -9,7 +9,7 @@ public class IncreaseSlider : MonoBehaviour
     [SerializeField] Slider cookSlider;
     private float sliderValue;
     private float increaseCount = 0.1f;
-    private float decreaseCount = 40;
+    private float decreaseCount = 50;
 
     private bool decrease1 = true;
     private bool decrease2 = true;

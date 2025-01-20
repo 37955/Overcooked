@@ -7,7 +7,6 @@ public class SliderIncreaser : MonoBehaviour
 {
     [SerializeField] Slider theChopSlider;
     [SerializeField] IngredientCollisionDetector collisionDetectorScript;
-    private GameObject[] players = new GameObject[1];
     private float sliderValue;
     private float increaseValue = 5;
     private float theTime;
