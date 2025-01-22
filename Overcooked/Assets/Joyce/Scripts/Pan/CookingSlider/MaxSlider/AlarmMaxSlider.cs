@@ -18,24 +18,21 @@ public class AlarmMaxSlider : MonoBehaviour
     }
     private void Update()
     {
-
-
-        if (cookSlider.value == 100 && alarmCount <= 6)
+        if (cookSlider.value == 100 && alarmCount <= 7)
         {
             AlarmOn();
         }
-        else if (alarmCount == 6)
+        if (alarmCount == 7)
         {
             alarmImage.SetActive(false);
             alarmImageEnabled = false;
         }
-
     }
 
     void AlarmOn()
     {
         theTime += Time.deltaTime;
-        if (theTime >= resetTime && alarmCount < 6)
+        if (theTime >= resetTime && alarmCount < 7)
         {
             alarmImageEnabled = !alarmImageEnabled;
             if (alarmImageEnabled)
@@ -44,8 +41,6 @@ public class AlarmMaxSlider : MonoBehaviour
             }
             theTime = 0f;
         }
-
         alarmImage.SetActive(alarmImageEnabled);
-
     }
 }
