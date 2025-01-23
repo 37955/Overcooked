@@ -39304,6 +39304,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2198498254820455629, guid: f4713b224a9fee148b262d113e5e6d2e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198498254820455629, guid: f4713b224a9fee148b262d113e5e6d2e, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2208699004967143951, guid: f4713b224a9fee148b262d113e5e6d2e, type: 3}
@@ -63356,7 +63360,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.9520523, b: 0.7377358, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
