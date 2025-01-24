@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip dashSound;
     private AudioSource audioSource;
 
+    // Animator reference
+    public Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
         }
     }
 
@@ -52,10 +60,21 @@ public class PlayerMovement : MonoBehaviour
 
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+
+        
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", true); 
+            }
         }
         else
         {
             transform.Translate(Vector3.zero, Space.World);
+
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", false);
+            }
         }
     }
 
@@ -86,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 audioSource.PlayOneShot(dashSound);
             }
+
         }
 
         if (dustDashTimeLeft <= 0 && dustDash != null && dustDash.isPlaying)
