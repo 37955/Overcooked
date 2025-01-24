@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 53bccac7fac281547aefa4972471ec3c, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d35753b358fcad47929e5568cb481c9, type: 3}
       propertyPath: m_Name
-      value: M6BO_3D_CharacterTextureTESTTESTTEST_Danielsentveld
+      value: M6BO_3D_CharacterTexturePREFAB
       objectReference: {fileID: 0}
     - target: {fileID: 1176840465855452252, guid: 1d35753b358fcad47929e5568cb481c9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -242,7 +242,8 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 786d36d4851db1940a52bbe9c48623e2, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 1d35753b358fcad47929e5568cb481c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d35753b358fcad47929e5568cb481c9, type: 3}
