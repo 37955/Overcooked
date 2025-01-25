@@ -8159,8 +8159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47543f0345522df48ae162badd4ef771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  dashSpeed: 15
+  moveSpeed: 7
+  dashSpeed: 17
   dashDuration: 0.2
   dashCooldown: 1
   dustTrail: {fileID: 759742021}
@@ -64299,8 +64299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47543f0345522df48ae162badd4ef771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  dashSpeed: 15
+  moveSpeed: 7
+  dashSpeed: 17
   dashDuration: 0.2
   dashCooldown: 1
   dustTrail: {fileID: 1479202484}
