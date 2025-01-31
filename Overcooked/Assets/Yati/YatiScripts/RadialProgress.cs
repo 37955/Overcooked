@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+//Commenting convention: Fields and variables
 public class RadialProgress : MonoBehaviour
 {
     [SerializeField] private Image _image;
