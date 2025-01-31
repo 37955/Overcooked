@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class RadialProgress : MonoBehaviour
 {
-    [SerializeField] Image image;
-    [SerializeField] float speed = 70;
-    [SerializeField] private float reverseSpeed = 50;
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private Canvas timerCanvas;
-    [SerializeField] private Canvas orderCanvas;
+    [SerializeField] private Image _image;
+    [SerializeField] private float _speed = 70f;
+    [SerializeField] private float _reverseSpeed = 50f;
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _timerCanvas;
+    [SerializeField] private Canvas _orderCanvas;
 
-    float currentValue;
+    private float _currentValue;
 
     void Start()
     {
@@ -19,55 +19,56 @@ public class RadialProgress : MonoBehaviour
 
     void Update()
     {
-        if (canvas.gameObject.activeSelf)
+        if (_canvas.gameObject.activeSelf)
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                if (currentValue < 100)
+                if (_currentValue < 100)
                 {
-                    currentValue += speed * Time.unscaledDeltaTime;
+                    _currentValue += _speed * Time.unscaledDeltaTime;
                 }
             }
             else
             {
-                if (currentValue > 0)
+                if (_currentValue > 0)
                 {
-                    currentValue -= reverseSpeed * Time.unscaledDeltaTime;
+                    _currentValue -= _reverseSpeed * Time.unscaledDeltaTime;
                 }
             }
-            image.fillAmount = currentValue / 100;
+            _image.fillAmount = _currentValue / 100;
 
-            if (currentValue >= 100)
+            if (_currentValue >= 100)
             {
                 HideCanvas();
             }
 
-            if (currentValue < 100)
+            if (_currentValue < 100)
             {
-                HideTimerandOrder();
-                
+                HideTimerAndOrder();
             }
 
-            if(currentValue >= 100)
+            if (_currentValue >= 100)
             {
-                ShowTimerandOrder();
+                ShowTimerAndOrder();
             }
         }
     }
 
-    private void ShowTimerandOrder()
+    private void ShowTimerAndOrder()
     {
-        orderCanvas.gameObject.SetActive(true);
-        timerCanvas.gameObject.SetActive(true);
+        _orderCanvas.gameObject.SetActive(true);
+        _timerCanvas.gameObject.SetActive(true);
     }
-    private void HideTimerandOrder()
+
+    private void HideTimerAndOrder()
     {
-        orderCanvas.gameObject.SetActive(false);
-        timerCanvas.gameObject.SetActive(false);
+        _orderCanvas.gameObject.SetActive(false);
+        _timerCanvas.gameObject.SetActive(false);
     }
+
     private void HideCanvas()
     {
-        canvas.gameObject.SetActive(false);
+        _canvas.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 }
