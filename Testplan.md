@@ -28,20 +28,32 @@ Wat hebben wij nodig om goede footage te krijgen die goed te analyseren is: Wij 
 
 
 Saad:
-1.Het verliep goed en het was ook leuk om te spelen, maar het voelde soms nog wel een beetje buggy.
-2.Er zat nog helemaal geen game art in, dus ik miste het wel.
-3.Ik vind het wel leuk en ik zie wel potentie.
-4.Art em meer mechanics toevoegen.
+
+1. Het verliep goed en het was ook leuk om te spelen, maar het voelde soms nog wel een beetje buggy.
+
+2. Er zat nog helemaal geen game art in, dus ik miste het wel.
+
+3. Ik vind het wel leuk en ik zie wel potentie.
+
+4. Art em meer mechanics toevoegen.
 
 Jay:
-1.Het ging moeilijk.
-2.Er zat nog geen game art in dus dat vond ik jammer.
-3.Het was wel grappig maar ik vond het nog niet zo speciaal.
-4.De game verder afmaken.
+
+1. Het ging moeilijk.
+
+2. Er zat nog geen game art in dus dat vond ik jammer.
+
+3. Het was wel grappig maar ik vond het nog niet zo speciaal.
+
+4. De game verder afmaken.
 
 Tyler:
-1.De game runt goed, maar ik was vergeten om de controls te lezen in het begin dus daarom ging het wat moeilijker, maar daarna ging het goed.
-2.De game art vond ik erg mooi eruit zien, de game zag er goed afgewerkt uit
-3.Ik vond het leuk om te spelen en ik vind het knap wat ze hebben kunnen maken in zo weinig tijd.
-4.De colliders fixen, meer mechanics toevoegen en dat je kan winnen of verliezen.
+
+1. De game runt goed, maar ik was vergeten om de controls te lezen in het begin dus daarom ging het wat moeilijker, maar daarna ging het goed.
+
+2. De game art vond ik erg mooi eruit zien, de game zag er goed afgewerkt uit.
+
+3. Ik vond het leuk om te spelen en ik vind het knap wat ze hebben kunnen maken in zo weinig tijd.
+
+4. De colliders fixen, meer mechanics toevoegen en dat je kan winnen of verliezen.
 
