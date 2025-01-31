@@ -18,4 +18,14 @@ Wat hebben wij nodig om goed te kunnen testen: Goeie Computer / Laptop, Stille r
 
 Wat hebben wij nodig om goede footage te krijgen die goed te analyseren is: Wij hebben een goeie webcam nodig waarbij je de testers ziet spelen en een microfoon die de testers kan opnemen.
 
+1. Hoe speelbaar was de game?
+Het verliep goed en het was ook leuk om te spelen, maar het voelde soms nog wel een beetje buggy
 
+2. Wat vondt je van de game art?
+De game art vond ik erg mooi eruit zien, de game zag er goed afgewerkt uit
+
+4. Vond je het leuk?  
+Ik vond het leuk om te spelen en ik vind het knap wat ze hebben kunnen maken in zo weinig tijd.
+
+6. Zijn er nog verbeter punten?
+De colliders fixen, meer mechanics toevoegen en dat je kan winnen of verliezen.
