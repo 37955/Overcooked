@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 
+
+//Commenting convention:Method
+
 public class CountdownTimer : MonoBehaviour
 {
     public float timerDuration = 150f; 
